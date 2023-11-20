@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'pc' : {'min': '1515px'},
+    },
     extend: {},
   },
   plugins: [],
