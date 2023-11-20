@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-grey{
+    background-color: #171616;
+}
+
+html, body{
+  font-family: 'Urbanist', sans-serif;
+  text-align: left;
+  color: white
+
+}
+
+.text-160{
+  font-size: 160px;
+}
+.line-height{
+  line-height: 0.966;
+}
+
+.text-blue{
+  color: #00BDF9
+}
+
+.text-green{
+  color: #00F99B;
+}
+
+.text-yellow{
+  color: #E5F900;
+}
+.orange-bg{
+  background-color: #F46F51;
+}
+
+.bg-blue{
+  background-color: #00BDF9;
+}
+
+.bg-green{
+  background-color: #00F99B;
+}
+
+.bg-yellow{
+  background-color: #E5F900;
+}
