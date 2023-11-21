@@ -1,20 +1,36 @@
 import logo from './logo.svg';
 import Homepage from './components/Homepage';
+import {useMemo, useState} from 'react';
+import Main from './components/Main';
 import './App.css';
 
 function App() {
+
+  const [token, setToken] = useState(null);
+
+  useMemo(() =>{
+    const hash = window.location.hash;
+        if (!token && hash) {
+           var token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1];
+           localStorage.setItem('token', token)
+        }
+      setToken(token);
+      console.log(token)
+  },[token])
+
+  
+
   return (
     <div className="App">
-      <main className='bg-black w-full h-screen flex justify-center items-center flex-col'>
-        <div className=' w-10/12 h-5/6 rounded-xl bg-grey flex items-center justify-center'>
-          <Homepage />
-        </div>
-        <footer className='mt-8 flex w-full justify-between '>
-          <div className='bg-white px-1 w-4/12 '></div>
-            <p>xcac</p>
-            <div className='bg-white px-1 w-4/12 '>
-          </div>
-        </footer>
+      <main className={`${token ? 'bg-grey' : 'bg-black'} w-full h-screen flex justify-center items-center flex-col`}>
+
+        {token ? <Main/>:   <Homepage />
+
+        }
+        
+         
+ 
+        
       </main>
     </div>
   );
