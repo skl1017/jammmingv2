@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import Homepage from './components/Homepage';
 import {useMemo, useState} from 'react';
+import { UserInfoProvider } from './UserInfoContext';
 import Main from './components/Main';
+
 import './App.css';
 
 function App() {
@@ -22,16 +24,18 @@ function App() {
 
   return (
     <div className="App">
-      <main className={`${token ? 'bg-grey' : 'bg-black'} w-full h-screen flex justify-center items-center flex-col`}>
+      <UserInfoProvider>
+        <main className={`${token ? 'bg-grey' : 'bg-black'} w-full h-screen flex justify-center items-center flex-col`}>
 
-        {token ? <Main/>:   <Homepage />
+          {token ? <Main/>:   <Homepage />
 
-        }
-        
-         
- 
-        
-      </main>
+          }
+          
+          
+  
+          
+        </main>
+      </UserInfoProvider>
     </div>
   );
 }

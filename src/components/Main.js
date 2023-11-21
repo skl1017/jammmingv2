@@ -1,5 +1,6 @@
-import {useEffect, useState, useMemo} from 'react';
+import {useEffect, useState, useMemo, useContext} from 'react';
 import Navbar from './Navbar';
+import UserInfoContext from '../UserInfoContext';
 
 
 function Main() {
@@ -8,6 +9,13 @@ function Main() {
     const [currentTab, setCurrentTab] = useState('stats');
     const [topArtists, setTopArtists] = useState([]);
     const [topTracks, setTopTracks] = useState([]);
+
+    const {userId, getUserId} = useContext(UserInfoContext);
+
+    useEffect(() =>{
+        getUserId();
+    },[])
+    
 
     useEffect(() =>{
         const token = localStorage.getItem('token');

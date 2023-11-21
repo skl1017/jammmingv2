@@ -47,7 +47,7 @@ function Navbar(props) {
                 </a>
             </div>
 
-        <figure className='w-7/12'>
+        <figure className='w-7/12 mt-6'>
             <img className='rounded-full w-full h-full object-contain' src={userInfo.images[1].url} alt=''/>
         </figure>
         <p className=''>Hi, {userInfo.display_name}!</p>
@@ -55,9 +55,8 @@ function Navbar(props) {
         <nav className='w-11/12 mt-10'>
             <ul className='text-xl text-orange'>
                 
-                <li className={`${currentTab === 'stats' ? 'orange-bg-light' :  null} p-3 rounded-lg flex justify-left gap-5 items-center`}><span class="material-symbols-outlined">analytics</span><button onClick={()=>{setCurrentTab('stats')}}>Your stats</button></li>
-              
-                <li className={`${currentTab === 'make-playlist' ? 'orange-bg-light' :  null} p-3 rounded-lg flex justify-left gap-5 items-center`}><span class="material-symbols-outlined">playlist_add</span><button onClick={()=>{setCurrentTab('make-playlist')}}>Make a playlist</button></li>
+                <li onClick={()=>{setCurrentTab('stats')}} className={`${currentTab === 'stats' ? 'orange-bg-light' :  null} p-3 cursor-pointer rounded-lg flex justify-left gap-5 items-center`}><span class="material-symbols-outlined">analytics</span>Your stats</li>
+                <li onClick={()=>{setCurrentTab('playlists')}} className={`${currentTab === 'playlists' ? 'orange-bg-light' :  null} p-3 cursor-pointer rounded-lg flex justify-left gap-5 items-center`}><span class="material-symbols-outlined">playlist_play</span>Make a playlist</li>
             
             </ul>
         </nav>
