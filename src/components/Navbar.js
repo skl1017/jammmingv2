@@ -19,7 +19,6 @@ function Navbar(props) {
             });
             const data = await response.json();
             setUserInfo(data);
-            console.log(data)
         }
 
         getUserInfo();
@@ -47,7 +46,7 @@ function Navbar(props) {
                 </a>
             </div>
 
-        <figure className='w-7/12 mt-6'>
+        <figure className='w-7/12 mt-16'>
             <img className='rounded-full w-full h-full object-contain' src={userInfo.images[1].url} alt=''/>
         </figure>
         <p className=''>Hi, {userInfo.display_name}!</p>
@@ -55,8 +54,8 @@ function Navbar(props) {
         <nav className='w-11/12 mt-10'>
             <ul className='text-xl text-orange'>
                 
-                <li onClick={()=>{setCurrentTab('stats')}} className={`${currentTab === 'stats' ? 'orange-bg-light' :  null} p-3 cursor-pointer rounded-lg flex justify-left gap-5 items-center`}><span class="material-symbols-outlined">analytics</span>Your stats</li>
-                <li onClick={()=>{setCurrentTab('playlists')}} className={`${currentTab === 'playlists' ? 'orange-bg-light' :  null} p-3 cursor-pointer rounded-lg flex justify-left gap-5 items-center`}><span class="material-symbols-outlined">playlist_play</span>Make a playlist</li>
+                <li onClick={()=>{setCurrentTab('stats')}} className={`${currentTab === 'stats' ? 'orange-bg-light' :  null} p-3 cursor-pointer rounded-lg flex justify-left gap-5 items-center`}><span className="material-symbols-outlined">analytics</span>Your stats</li>
+                <li onClick={()=>{setCurrentTab('playlists')}} className={`${currentTab === 'playlists' ? 'orange-bg-light' :  null} p-3 cursor-pointer rounded-lg flex justify-left gap-5 items-center`}><span className="material-symbols-outlined">playlist_play</span>Make a playlist</li>
             
             </ul>
         </nav>
